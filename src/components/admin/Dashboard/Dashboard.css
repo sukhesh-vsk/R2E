@@ -1,0 +1,18 @@
+.card-head {
+    font-size: 1.5rem;
+}
+
+.card-data {
+    font-size: 1.3rem;
+    font-weight: 500;
+    @apply text-dimmed;
+    span {
+        font-size: 1.8rem;
+        font-weight: 600;
+        @apply text-secondary;
+    }
+}
+
+.dividerl {
+    border-right: 1px solid #2d3748;
+}
