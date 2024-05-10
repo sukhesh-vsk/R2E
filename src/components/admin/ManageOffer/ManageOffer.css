@@ -1,0 +1,41 @@
+.offer-table-head tr th {
+    font-weight: 400;
+}
+
+.offer-table * tr th,td {
+    padding: 0.7rem 3rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.34);
+    font-weight: 500;
+}
+
+.offer-table * tr th {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.offer-table {
+    border-radius: 8px;
+}
+
+.toggle-button::after {
+    content: 'Ongoing';
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    color: #111116de;
+    font-weight: 600;
+    height: 98%;
+    width: 53%;
+    border-radius: 0.75rem;
+    top: 1px;
+    left: 1px;
+    transition: all ease 0.3s;
+}
+
+.switch-toggle:checked + .toggle-button::after {
+    content: 'Expired';
+    left: 50%;
+}
