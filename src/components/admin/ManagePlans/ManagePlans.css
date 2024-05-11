@@ -1,9 +1,7 @@
 .select-btn {
     @apply bg-sub-btn;
-    @apply text-black-txt;
     padding: 0.8rem 1.5rem;
     font-size: 0.9rem;
-    border-radius: 30px;
 }
 
 .select-btn:focus {
@@ -14,7 +12,6 @@
 .plan-btns {
     height: 7rem;
     width: 100%;
-
     a {
         margin: 0 2rem;
     }
@@ -22,15 +19,13 @@
 
 .add-plan-btn {
     padding: 0.4rem 0.8rem;
-    background-color: black;
-    color: white;
     border-radius: 10px;
     font-weight: 600;
     font-size: 0.8rem;
-
+    
 }
 
-.plan-table-head tr {
+.plan-table-head tr{
     th:first-child {
         border-radius: 15px 0px 0px 15px;
     }
@@ -41,10 +36,10 @@
 }
 
 .plan-table-body:before {
-    content: "@";
-    display: block;
-    line-height: 0rem;
-    text-indent: -99999px;
+    content:"@";
+    display:block;
+    line-height:0rem;
+    text-indent:-99999px;
 }
 
 .plan-table-body tr {
@@ -52,7 +47,7 @@
         border-radius: 15px 0px 0px 15px;
     }
 
-    td:last-child {
+    td:last-child{
         border-radius: 0px 15px 15px 0px;
     }
 }
