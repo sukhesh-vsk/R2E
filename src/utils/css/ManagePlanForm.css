@@ -1,0 +1,34 @@
+.manage-plan-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    background-color: rgba(39, 39, 39, 0.492);
+}
+
+.plan-form-content {
+    padding: 2rem 4rem;
+    background-color: #3d4c61db;
+    width: 75%;
+    height: 80%;
+}
+
+.manage-plan-form form {
+    height: 95%;
+}
+
+.manage-plan-form .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+
+    input, label {
+        width: 60%;
+    }
+}
