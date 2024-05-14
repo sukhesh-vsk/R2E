@@ -58,8 +58,11 @@ export const ManageOffer = () => {
         </div>
       </div>
       <div className="overflow-x-auto">
-        <table className="offer-table mx-0 md:mx-10 w-full bg-light sm:w-auto">
-          <thead className="caps offer-table-head" style={{ color: "#64748B" }}>
+        <table className="offer-table mx-0 md:mx-10 w-full bg-light sm:w-full">
+          <thead
+            className="caps offer-table-head text-center"
+            style={{ color: "#64748B" }}
+          >
             <tr>
               <th className="px-2 py-4">Plan</th>
               <th className="px-2 py-4">Description</th>
@@ -70,11 +73,12 @@ export const ManageOffer = () => {
           <tbody className="offer-table-body text-bg">
             {data.map((offer, index) => (
               <tr key={index}>
-                <td className="px-2 py-2 sm:py-4">
-                  <span className="sm:hidden font-semibold"></span> {offer.plan}
+                <td className="px-2 py-2 sm:py-4 text-center">
+                  <span className="sm:hidden font-semibold text-center"></span>{" "}
+                  {offer.plan}
                 </td>
-                <td className="px-2 py-2 sm:py-4">
-                  <span className="sm:hidden font-semibold"></span>{" "}
+                <td className="px-2 py-2 sm:py-4 text-center">
+                  <span className="sm:hidden font-semibold text-center"></span>{" "}
                   {offer.description}
                 </td>
                 <td className="px-2 py-2 sm:py-4 text-center">
