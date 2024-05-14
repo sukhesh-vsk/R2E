@@ -1,5 +1,4 @@
 import React from "react";
-
 import { BiFilterAlt } from "react-icons/bi";
 import "./ManageOffer.css";
 
@@ -20,7 +19,7 @@ export const ManageOffer = () => {
     {
       plan: "1.5 GB/day, 84 days",
       description: "1.5 GB/day Unlimited Calls",
-      offer: ["799", "599"],
+      offer: ["20"],
       validTill: "26-07-2024",
     },
   ];
@@ -35,13 +34,14 @@ export const ManageOffer = () => {
         />
         <label
           htmlFor="page-toggle"
-          className="toggle-button relative  flex justify-around items-center w-48 h-12 rounded-xl border-1 focus:outline-1"
+          className="toggle-button relative flex justify-around items-center w-48 h-12 rounded-xl border-1 focus:outline-1"
           style={{
             backgroundColor: "#575757",
             color: "rgb(250 250 250 / 43%)",
           }}
         >
-          <span>Ongoing</span> <span>Expired</span>
+          <span>Ongoing</span>
+          <span>Expired</span>
         </label>
       </div>
       <div className="flex items-center justify-center mb-10">
@@ -57,22 +57,27 @@ export const ManageOffer = () => {
           />
         </div>
       </div>
-      <div className="flex items-center justify-center">
-        <table className="offer-table mx-10 w-full bg-light">
+      <div className="overflow-x-auto">
+        <table className="offer-table mx-0 md:mx-10 w-full bg-light sm:w-auto">
           <thead className="caps offer-table-head" style={{ color: "#64748B" }}>
             <tr>
-              <th>Plan</th>
-              <th>Description</th>
-              <th>Offer</th>
-              <th>Valid Till</th>
+              <th className="px-2 py-4">Plan</th>
+              <th className="px-2 py-4">Description</th>
+              <th className="px-2 py-4">Offer</th>
+              <th className="px-2 py-4">Valid Till</th>
             </tr>
           </thead>
           <tbody className="offer-table-body text-bg">
             {data.map((offer, index) => (
               <tr key={index}>
-                <td>{offer.plan}</td>
-                <td>{offer.description}</td>
-                <td className="text-center">
+                <td className="px-2 py-2 sm:py-4">
+                  <span className="sm:hidden font-semibold"></span> {offer.plan}
+                </td>
+                <td className="px-2 py-2 sm:py-4">
+                  <span className="sm:hidden font-semibold"></span>{" "}
+                  {offer.description}
+                </td>
+                <td className="px-2 py-2 sm:py-4 text-center">
                   {offer.offer.length === 1 ? (
                     <span>{offer.offer + "% Off"}</span>
                   ) : (
@@ -84,7 +89,10 @@ export const ManageOffer = () => {
                     </>
                   )}
                 </td>
-                <td className="text-center">{offer.validTill}</td>
+                <td className="px-2 py-2 sm:py-4 text-center">
+                  <span className="sm:hidden font-semibold"></span>{" "}
+                  {offer.validTill}
+                </td>
               </tr>
             ))}
           </tbody>
