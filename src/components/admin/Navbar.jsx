@@ -1,14 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
 export const Navbar = () => {
   const [hidden, setHidden] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const mobileMenuRef = useRef(null);
+  const menuIconRef = useRef(null);
 
   const isActive = (route) => {
     return location.pathname === route ? "font-bold" : "";
   };
+
+  const handleOutsideClick = (event) => {
+    if (
+      mobileMenuRef.current &&
+      !mobileMenuRef.current.contains(event.target) &&
+      !menuIconRef.current.contains(event.target)
+    ) {
+      setIsMobileMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.addEventListener("click", handleOutsideClick);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <nav className="flex w-full justify-between items-center py-10 px-4 md:px-0 relative">
@@ -45,7 +67,7 @@ export const Navbar = () => {
           {hidden && (
             <div
               id="dropdownNavbar"
-              className="z-10 mt-2 absolute w-full list-none font-normal rounded-lg dark:bg-gray-700 dark:divide-gray-600"
+              className="z-10 mt-1 absolute w-auto list-none font-normal rounded-lg dark:bg-gray-700 dark:divide-gray-600"
             >
               <ul
                 className="py-2 text-sm text-gray-700 dark:text-gray-400"
@@ -61,6 +83,7 @@ export const Navbar = () => {
           )}
         </div>
         <button
+          ref={menuIconRef}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="focus:outline-none"
         >
@@ -81,7 +104,10 @@ export const Navbar = () => {
         </button>
       </div>
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md z-10">
+        <div
+          ref={mobileMenuRef}
+          className="md:hidden absolute top-full left-0 w-full bg-white shadow-md z-10"
+        >
           <ul className="list-none flex-col space-y-4 p-4">
             <li className="px-5">
               <NavLink to="/" className={isActive("/")}>
