@@ -76,7 +76,7 @@ export default function Recharge() {
             color: activeBtn === "Data Card" ? "white" : "",
           }}
         >
-          Data Card
+          <span>Data Card</span>
         </button>
         <button
           onClick={() => handleButtonClick("Gas")}
