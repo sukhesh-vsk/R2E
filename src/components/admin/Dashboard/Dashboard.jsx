@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import "./Dashboard.css";
+import './Dashboard.css';
 
 export const Dashboard = () => {
   const data = {
@@ -12,7 +12,7 @@ export const Dashboard = () => {
 
   return (
     <section className="container grid grid-cols-12 gap-4 mx-auto">
-      <div className="card-overview col-span-12 px-5 py-4 bg-card-bg rounded-lg">
+      <div className="card-overview col-span-12 px-5 py-4 bg-card-bg rounded-lg border">
         <div className="card-head cols-span-12 px-5">
           <p className="pb-5">Today's Overview</p>
           <hr className="border-current text-dimmed" />
